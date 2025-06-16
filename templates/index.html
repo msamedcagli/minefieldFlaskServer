@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mayın Tarlası</title>
+  <style>
+    /* Genel sayfa stili */
+    body {
+      background: linear-gradient(135deg, #4b79a1, #283e51);
+      color: #f0f0f0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      user-select: none;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    /* Canvas stili */
+    canvas {
+      background-color: #d7d7d7;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      border: 3px solid #444;
+      display: block;
+      margin: 20px auto 10px;
+    }
+
+    /* Durum mesajı */
+    #status {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      min-height: 30px;
+      text-shadow: 1px 1px 2px #0008;
+    }
+
+    /* Oyun sonu mesajı */
+    .game-over-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 15px;
+      font-size: 2rem;
+      font-weight: bold;
+      display: none;
+      z-index: 1000;
+      animation: pulse 1s ease-in-out forwards;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Buton stili */
+    #resetBtn {
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      user-select: none;
+      margin-bottom: 30px;
+    }
+    #resetBtn:hover {
+      background-color: #45a045;
+      transform: scale(1.05);
+    }
+    #resetBtn:active {
+      transform: scale(0.95);
+    }
+
+    /* Footer */
+    footer {
+      font-size: 0.8rem;
+      color: #bbb;
+      margin-top: 40px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>⚠️ Mayın Tarlası ⚠️</h1>
+  <div id="status">Oyun devam ediyor...</div>
+  <div id="gameOverMessage" class="game-over-message"></div>
+  <button id="resetBtn">Tekrar Oyna</button>
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <footer>© 2025 - Minefield Game · Created by msamedcagli</footer>
+  <script src="/static/game.js"></script>
+</body>
+</html>
